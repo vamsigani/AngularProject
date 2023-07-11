@@ -1,0 +1,37 @@
+<div>
+   <h4>ngFor with Object Array Example</h4>
+       <table border="1">
+            <tr>
+               <th>Emp Id</th>
+               <th>Emp Name</th>
+               <th>Emp PhNo</th>
+               <th>Emp Email</th>
+               <th>Emp Password</th>
+               <th>Emp Salary</th>
+               <th>Action</th>
+               <th>EDIT</th>
+               
+            </tr>
+            <tr *ngFor="let emp of employees; let i = index">
+                  <td>{{emp.empId}}</td>
+                  <td>{{emp.empName}}</td>
+                  <td>{{emp.empPhNo}}</td>
+                  <td>{{emp.empEmail}}</td>
+                  <td>{{emp.empPassword}}</td>
+                  <td>{{emp.salary}}</td>
+                  <td><input type="button" value="Delete" (click)="onDeleteClick(i)"></td>
+                  <td><input type="button" value="Update" (click)="onupDateClick(emp)"></td>
+            </tr> 
+            <tr>
+               <td><input type="text" [(ngModel)]="newemployee.empId" placeholder="Emp Id"></td>
+               <td><input type="text" [(ngModel)]="newemployee.empName" placeholder="Emp Name"></td>
+               <td><input type="text" [(ngModel)]="newemployee.empPhNo" placeholder="Emp PhNo"></td>
+               <td><input type="text" [(ngModel)]="newemployee.empEmail" placeholder="Emp Email"></td>
+               <td><input type="text" [(ngModel)]="newemployee.empPassword" placeholder="Emp Password"></td>
+               <td><input type="text" [(ngModel)]="newemployee.salary" placeholder="Emp Salary"></td>
+               <td><input type="button" value="Insert" (click)="onInsertClick()"></td>
+               
+               
+            </tr>
+       </table>
+   </div>
